@@ -523,8 +523,12 @@ I file dei comandi vivono in `.shared/commands/` — una sola fonte di verità c
 
 **Stato di verifica**: lo sviluppo base (editing, lint, typecheck, build) funziona identicamente con Claude Code, Codex, e Cursor. Il percorso parallelo dei comandi shared è verificato su Claude Code; su Codex e Cursor dipende dalla versione del runtime — vedi [`docs/agent-runtimes/`](docs/agent-runtimes/) per lo status corrente e una checklist di smoke test.
 
-*Ispirato dall'[Agentic Coding Starter Kit di Leon van Zyl](https://github.com/leonvanzyl/agentic-coding-starter-kit).*
-
 </details>
 
-MIT License
+---
+
+## Ringraziamenti
+
+Un grazie a [Leon van Zyl](https://github.com/leonvanzyl): il suo [Agentic Coding Starter Kit](https://github.com/leonvanzyl/agentic-coding-starter-kit) è stato l'ispirazione da cui questo progetto è partito.
+
+Distribuito con licenza [MIT](LICENSE).
