@@ -2,7 +2,7 @@
 
 Il boilerplate che utilizzeremo come punto di partenza per costruire le nostre web app.
 
-Invece di partire ogni volta da un progetto vuoto, troveremo già configurati alcuni degli strumenti che utilizzeremo più spesso e il workflow agentico che guiderà lo sviluppo.
+Invece di partire ogni volta da un progetto vuoto, partiremo da una base in cui ho già predisposto gli strumenti che utilizzeremo più spesso e il workflow agentico che guiderà lo sviluppo.
 
 > Funziona con **Claude Code** (consigliato), **OpenAI Codex** e **Cursor Composer**.
 
@@ -12,42 +12,65 @@ Invece di partire ogni volta da un progetto vuoto, troveremo già configurati al
 
 Il boilerplate non è un progetto vuoto.
 
-Ho già installato e configurato alcuni degli strumenti che utilizzeremo più spesso, così quando ci serviranno potremo partire da una base già predisposta invece di implementarli ogni volta da zero.
+Ho già installato e predisposto alcuni degli strumenti che utilizzeremo più spesso.
 
-| | |
-|---|---|
-| 🔐 **Autenticazione** | Better Auth come base per registrazione, login e accesso con Google |
-| 🗄️ **Database** | PostgreSQL + Drizzle ORM per salvare e gestire i dati |
-| 🤖 **AI** | OpenRouter per collegare modelli AI all'applicazione |
-| 🎨 **UI** | shadcn/ui + Tailwind per costruire l'interfaccia |
-| 🛡️ **Sicurezza** | Protezioni di base e workflow dedicati ai controlli di sicurezza |
-| 📁 **File Storage** | Sistema predisposto per salvare file e upload |
+**Questo non significa che ogni nuova app abbia già tutte queste funzionalità.** Significa che abbiamo già la base tecnica necessaria per aggiungerle quando ci serviranno.
 
-> Questo non significa che la tua applicazione abbia già tutte queste funzionalità. Significa che gli strumenti necessari sono già predisposti e potremo utilizzarli quando ci serviranno.
+### 🔐 Autenticazione
+
+**Better Auth** è già predisposto come sistema di autenticazione.
+
+Potremo utilizzarlo per aggiungere registrazione, login, accesso con Google e gestione degli utenti.
+
+### 🗄️ Database
+
+**PostgreSQL** è il database che utilizzeremo per salvare i dati delle nostre applicazioni.
+
+**Drizzle ORM** permette invece alla nostra applicazione di interagire con il database attraverso il codice.
+
+### 🤖 AI
+
+**OpenRouter** è già predisposto per permetterci di collegare modelli AI alla nostra applicazione.
+
+Se un'app non ha bisogno di funzionalità AI, semplicemente non lo utilizzeremo.
+
+### 🎨 UI
+
+**shadcn/ui + Tailwind** ci forniscono componenti e strumenti già pronti per costruire l'interfaccia.
+
+In questo modo non dobbiamo creare ogni elemento grafico completamente da zero.
+
+### 🛡️ Sicurezza
+
+Il boilerplate contiene già alcune protezioni di base e il workflow dedicato ai controlli di sicurezza che abbiamo visto durante il corso.
+
+### 📁 File Storage
+
+È già predisposto un sistema per gestire il caricamento e il salvataggio di file, come immagini e documenti.
 
 ---
 
 ## Il workflow agentico
 
-Nel boilerplate ho già inserito anche il workflow agentico che utilizzeremo per sviluppare le nostre applicazioni.
+Anche il workflow agentico che abbiamo visto nella lezione precedente vive direttamente all'interno del progetto.
 
-Questo significa che all'interno del progetto troverai già i file di istruzioni che abbiamo visto nel corso: regole, processi e conoscenze che il Coding Agent potrà utilizzare mentre lavora.
+Alcuni dei file che vedete nel repository contengono infatti le istruzioni che definiscono come vogliamo che i Coding Agent lavorino.
 
-**AGENTS.md** → regole e informazioni generali del progetto
+**AGENTS.md** → contiene le regole e le informazioni generali del progetto.
 
-**Commands** → processi già definiti che possiamo richiamare quando servono
+**Commands** → contengono processi che possiamo richiamare quando servono.
 
-**Skills** → conoscenze specialistiche che gli agenti possono utilizzare durante il lavoro
+**Skills** → contengono conoscenze specialistiche che gli agenti possono utilizzare durante il lavoro.
 
-Non preoccuparti di imparare ora come funziona tutto questo: utilizzeremo questi strumenti insieme durante le prossime lezioni.
+Non serve imparare adesso il contenuto di questi file. Li vedremo in azione mentre costruiamo le nostre applicazioni.
 
 ---
 
 # Prepariamo il computer
 
-Prima di utilizzare il boilerplate dobbiamo installare alcuni strumenti che ci serviranno per sviluppare le nostre applicazioni.
+Prima di utilizzare il boilerplate dobbiamo installare sul nostro computer alcuni strumenti necessari per sviluppare le nostre web app.
 
-Questa configurazione va fatta **una sola volta** sul computer.
+Questa configurazione va fatta **una sola volta**. Una volta installati, questi strumenti rimarranno disponibili anche per i progetti futuri.
 
 > Se hai già configurato il tuo computer per un progetto precedente, salta direttamente a [Come iniziare un nuovo progetto](#come-iniziare-un-nuovo-progetto).
 
