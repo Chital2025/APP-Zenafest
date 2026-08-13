@@ -1,80 +1,65 @@
-# Crea webapp come Simo
+# Create App Like Simo
 
-Un template Next.js per costruire web app moderne con un agente AI, con una struttura guidata che ti permette di lavorare con gli stessi strumenti dei developer senza dover partire da zero.
+Il boilerplate che utilizzeremo come punto di partenza per costruire le nostre web app.
 
-> Funziona con **Claude Code** (consigliato), **OpenAI Codex**, o **Cursor Composer**. La scelta si fa nei prerequisiti — i passi 7 e 8 (Mac) o 6 e 7 (Windows) hanno menù a tendina con le istruzioni per ciascuna opzione.
+Invece di partire ogni volta da un progetto vuoto, troveremo già configurati alcuni degli strumenti che utilizzeremo più spesso e il workflow agentico che guiderà lo sviluppo.
 
----
-
-## Perché ho creato questo template
-
-Tool come Lovable, Replit e ambienti simili sono ottimi per iniziare. Permettono di costruire applicazioni velocemente e abbassano molto la barriera di ingresso.
-
-Il problema è che spesso ti ritrovi a costruire cose da developer senza capire davvero cosa sta succedendo sotto il cofano. Il codice esiste, ma non è davvero tuo. Non sai bene come è organizzato, non sai come ottimizzarlo, e non sai come intervenire quando vuoi fare qualcosa di più avanzato.
-
-Questo boilerplate nasce per fare un passaggio preciso: passare da tool come Lovable o Replit a costruire applicazioni con gli stessi strumenti dei developer, ma con una guida chiara.
-
-**La cosa che lo rende diverso dagli altri template**: risolve il problema classico di Claude Code; più la sessione va avanti, più Claude perde il filo, inizia a contraddirsi e introduce bug che non c'erano.
-
-Il motivo è l'accumulo di contesto. Questo template lo risolve alla radice con un'architettura multi-agente:
-
-- **Orchestratore**; legge la spec, coordina i task, non accumula contesto operativo
-- **Sotto-agenti**; ognuno riceve un brief preciso, esegue un task in isolamento con 200k token freschi, poi chiude
-- **Design system**; la direzione visiva viene estratta dai requisiti e iniettata in ogni brief UI, così lo stile rimane coerente tra un agente e l'altro
-
-Il processo scatta in automatico solo quando serve; per task importanti e strutturati. Per modifiche semplici, Claude lavora direttamente senza overhead.
-
-Il risultato: il codice rimane preciso e consistente dall'inizio alla fine del progetto, anche quando cresce.
+> Funziona con **Claude Code** (consigliato), **OpenAI Codex** e **Cursor Composer**.
 
 ---
 
-## Per chi è
+## Cosa ho già predisposto
 
-- Hai iniziato con tool come Lovable o Replit
-- Vuoi costruire applicazioni web reali
-- Vuoi capire meglio cosa succede dietro al codice
-- Vuoi avere più controllo sul tuo software
-- Vuoi lavorare con strumenti da developer senza sentirti completamente perso
+Il boilerplate non è un progetto vuoto.
 
----
-
-## Cosa include
-
-Autenticazione, database, AI, UI e sicurezza sono già configurati. Parti subito a costruire le feature.
+Ho già installato e configurato alcuni degli strumenti che utilizzeremo più spesso, così quando ci serviranno potremo partire da una base già predisposta invece di implementarli ogni volta da zero.
 
 | | |
 |---|---|
-| **Auth** | Email/password + Google OAuth |
-| **Database** | PostgreSQL + Drizzle ORM |
-| **AI** | 100+ modelli via OpenRouter |
-| **UI** | shadcn/ui + Tailwind 4 + dark mode |
-| **Sicurezza** | Rate limiting, CSP, validazione input, path traversal protection |
-| **Storage** | Locale in dev, Vercel in produzione |
+| 🔐 **Autenticazione** | Better Auth come base per registrazione, login e accesso con Google |
+| 🗄️ **Database** | PostgreSQL + Drizzle ORM per salvare e gestire i dati |
+| 🤖 **AI** | OpenRouter per collegare modelli AI all'applicazione |
+| 🎨 **UI** | shadcn/ui + Tailwind per costruire l'interfaccia |
+| 🛡️ **Sicurezza** | Protezioni di base e workflow dedicati ai controlli di sicurezza |
+| 📁 **File Storage** | Sistema predisposto per salvare file e upload |
+
+> Questo non significa che la tua applicazione abbia già tutte queste funzionalità. Significa che gli strumenti necessari sono già predisposti e potremo utilizzarli quando ci serviranno.
 
 ---
 
-<details>
-<summary><b>📦 Prima installazione (una tantum) — clicca per espandere</b></summary>
+## Il workflow agentico
 
-<br>
+Nel boilerplate ho già inserito anche il workflow agentico che utilizzeremo per sviluppare le nostre applicazioni.
 
-> **Da fare una sola volta nella vita**, mai più. Se hai già configurato il tuo computer per un progetto precedente, salta direttamente a [Come iniziare](#come-iniziare) qui sotto.
+Questo significa che all'interno del progetto troverai già i file di istruzioni che abbiamo visto nel corso: regole, processi e conoscenze che il Coding Agent potrà utilizzare mentre lavora.
 
-Questi strumenti vanno installati **una sola volta**. Una volta completato questo setup, non dovrai più rifarlo — né per questo progetto né per quelli futuri.
+**AGENTS.md** → regole e informazioni generali del progetto
+
+**Commands** → processi già definiti che possiamo richiamare quando servono
+
+**Skills** → conoscenze specialistiche che gli agenti possono utilizzare durante il lavoro
+
+Non preoccuparti di imparare ora come funziona tutto questo: utilizzeremo questi strumenti insieme durante le prossime lezioni.
+
+---
+
+# Prepariamo il computer
+
+Prima di utilizzare il boilerplate dobbiamo installare alcuni strumenti che ci serviranno per sviluppare le nostre applicazioni.
+
+Questa configurazione va fatta **una sola volta** sul computer.
+
+> Se hai già configurato il tuo computer per un progetto precedente, salta direttamente a [Come iniziare un nuovo progetto](#come-iniziare-un-nuovo-progetto).
 
 > **Come funziona il terminale**: incolli un comando, premi `Invio`, e aspetti. Sai che ha finito quando ricompare la riga con il tuo nome utente (es. `mario@MacBook %`). A quel punto puoi incollare il comando successivo. Non serve aprire un nuovo terminale tra un comando e l'altro, a meno che non sia indicato esplicitamente.
 
-Segui le istruzioni per il tuo sistema operativo:
-
 ---
 
-### Se usi Mac
+## Mac
 
-#### 1. Apri il Terminale
+Prima di tutto, apri il Terminale: premi `Cmd + Spazio`, scrivi **Terminale**, premi `Invio`. Si apre una finestra con sfondo scuro e testo bianco — è qui che eseguirai tutti i comandi.
 
-Premi `Cmd + Spazio`, scrivi **Terminale**, premi `Invio`. Si apre una finestra con sfondo scuro e testo bianco — è qui che eseguirai tutti i comandi.
-
-#### 2. Homebrew
+### 1. Homebrew
 
 **Cos'è**: il "negozio" che ti permette di installare programmi da terminale con un solo comando. Senza Homebrew dovresti scaricare ogni tool manualmente.
 
@@ -88,7 +73,7 @@ Premi `Cmd + Spazio`, scrivi **Terminale**, premi `Invio`. Si apre una finestra 
 
 **Come sai che ha funzionato**: chiudi il terminale, riaprilo, e scrivi `brew --version`. Se vedi un numero di versione, è tutto ok.
 
-#### 3. Git
+### 2. Git
 
 **Cos'è**: il sistema che salva la cronologia del tuo codice. Ogni modifica viene registrata, e puoi sempre tornare a una versione precedente.
 
@@ -107,7 +92,7 @@ git config --global user.email "la-tua-email@esempio.com"
 
 Questi comandi non danno nessun output — è normale. Devi farlo **una volta sola**, vale per tutti i progetti futuri. Se non hai ancora un account GitHub, creane uno su [github.com](https://github.com) — ti servirà dopo.
 
-#### 4. Node.js
+### 3. Node.js
 
 **Cos'è**: il motore che esegue il codice della tua app. Senza Node.js, il computer non sa come leggere il codice che scrivi.
 
@@ -117,7 +102,7 @@ brew install node
 
 Durata: circa 2 minuti. Verifica con `node --version` — deve mostrare v18 o superiore.
 
-#### 5. pnpm
+### 4. pnpm
 
 **Cos'è**: il gestore delle librerie. La tua app usa centinaia di pezzi di codice scritti da altri (pulsanti, connessione al database, ecc.). pnpm li scarica e li tiene aggiornati.
 
@@ -127,7 +112,7 @@ sudo npm install -g pnpm
 
 Ti chiederà la password del Mac. Verifica con `pnpm --version`.
 
-#### 6. Docker Desktop
+### 5. Docker
 
 **Cos'è**: Docker fa girare un database sul tuo computer senza che tu debba installare o configurare PostgreSQL manualmente. Pensalo come una "scatola" che contiene il database già pronto.
 
@@ -140,18 +125,9 @@ Ti chiederà la password del Mac. Verifica con `pnpm --version`.
 
 Verifica nel terminale: `docker --version`
 
-#### 7. Editor di codice
+### 6. Visual Studio Code
 
-**Cos'è**: l'editor dove vedrai e modificherai il codice.
-
-Hai due opzioni — espandi quella che vuoi usare. **Non installare entrambi.**
-
-<details>
-<summary><b>VS Code</b> (consigliato — è quello su cui questo template è stato sviluppato)</summary>
-
-<br>
-
-VS Code è gratuito ed è lo standard usato dalla maggior parte dei developer.
+**Cos'è**: l'editor dove vedrai e modificherai il codice. VS Code è gratuito ed è lo standard usato dalla maggior parte dei developer.
 
 1. Vai su [code.visualstudio.com](https://code.visualstudio.com/)
 2. Scarica, apri il `.dmg`, trascina nella cartella Applicazioni
@@ -171,12 +147,10 @@ VS Code ha un terminale integrato — funziona esattamente come il Terminale del
 
 7. Apri il terminale integrato: menu **Terminal → New Terminal** (oppure `` Ctrl + ` ``)
 
-Da questo momento puoi usare questo terminale per tutti i comandi del progetto. **Continua al passo 8** per installare l'agente AI.
-
-</details>
+Da questo momento puoi usare questo terminale per tutti i comandi del progetto. **Continua al passo 7** per installare l'agente AI.
 
 <details>
-<summary><b>Cursor</b> (alternativa — include l'agente AI integrato, ma serve un piano a pagamento)</summary>
+<summary><b>Preferisci Cursor?</b> (alternativa — include l'agente AI integrato, ma serve un piano a pagamento)</summary>
 
 <br>
 
@@ -190,22 +164,15 @@ Cursor è un editor basato su VS Code che include il proprio agente AI (Composer
 
 **Il terminale dentro Cursor**: identico a VS Code. Apri con menu **Terminal → New Terminal** (oppure `` Ctrl + ` ``).
 
-**Importante**: Composer è già integrato — **salta direttamente al passo 9** (Come iniziare). Non devi fare il passo 8 (l'agente AI da terminale).
+**Importante**: Composer è già integrato — **salta direttamente a [Come iniziare un nuovo progetto](#come-iniziare-un-nuovo-progetto)**. Non devi fare il passo 7 (l'agente AI da terminale).
 
 </details>
 
-#### 8. L'agente AI da terminale
+### 7. Claude Code
 
-> **Hai scelto Cursor al passo 7?** **Salta questo passaggio.** Cursor ha già Composer integrato — non serve installare nient'altro.
+> **Hai scelto Cursor al passo 6?** **Salta questo passaggio.** Cursor ha già Composer integrato — non serve installare nient'altro.
 
 **Cos'è**: l'AI che costruirà la tua app insieme a te. Tu descrivi cosa vuoi, l'agente scrive il codice.
-
-Hai due opzioni — espandi quella che vuoi usare:
-
-<details>
-<summary><b>Claude Code</b> (consigliato — è quello su cui il template è stato testato)</summary>
-
-<br>
 
 Serve uno di questi per usarlo: un piano [Anthropic Max o Pro](https://claude.ai), una [API key Anthropic](https://console.anthropic.com/), oppure un accesso tramite team o azienda.
 
@@ -217,16 +184,14 @@ sudo npm install -g @anthropic-ai/claude-code
 
 Durata: circa 30 secondi. Verifica con `claude --version`.
 
-</details>
-
 <details>
-<summary><b>OpenAI Codex</b> (alternativa)</summary>
+<summary><b>Preferisci OpenAI Codex?</b> (alternativa)</summary>
 
 <br>
 
 Serve un abbonamento [ChatGPT Plus/Pro/Business](https://openai.com/chatgpt/pricing/) oppure una [API key OpenAI](https://platform.openai.com/api-keys).
 
-> Assicurati di aver installato l'estensione **OpenAI Codex** (non Claude Code) al passo 7.
+> Assicurati di aver installato l'estensione **OpenAI Codex** (non Claude Code) al passo 6.
 
 Nel terminale di VS Code:
 
@@ -236,7 +201,7 @@ sudo npm install -g @openai/codex
 
 Verifica con `codex --version`.
 
-**Limite noto**: alcune versioni di Codex non riconoscono i comandi custom come `/starter-prompt`. Se al passo 9 Codex risponde "comando sconosciuto":
+**Limite noto**: alcune versioni di Codex non riconoscono i comandi custom come `/starter-prompt`. Se Codex risponde "comando sconosciuto":
 - Apri il file [`.shared/commands/starter-prompt.md`](.shared/commands/starter-prompt.md)
 - Copia tutto il contenuto
 - Incollalo nella chat di Codex come messaggio normale
@@ -247,17 +212,17 @@ Lo stesso fallback vale per `/create-spec`, `/continue-feature`, ecc.
 
 ---
 
-### Se usi Windows
+## Windows
 
 Prima di tutto, installa **WSL 2** (Windows Subsystem for Linux): segui la [guida ufficiale Microsoft](https://learn.microsoft.com/en-us/windows/wsl/install), scegli Ubuntu come distribuzione. WSL ti permette di usare un ambiente Linux dentro Windows — tutti i tool qui sotto vanno installati dentro Ubuntu, non nel terminale Windows classico.
 
 Apri il terminale Ubuntu e procedi con questi passaggi:
 
-#### 1. Apri il terminale Ubuntu
+### 1. Apri il terminale Ubuntu
 
 Cerca "Ubuntu" nel menu Start. Si apre una finestra con sfondo scuro — è qui che eseguirai tutti i comandi.
 
-#### 2. Git
+### 2. Git
 
 ```bash
 sudo apt update && sudo apt install git
@@ -270,7 +235,7 @@ git config --global user.name "Il Tuo Nome"
 git config --global user.email "la-tua-email@esempio.com"
 ```
 
-#### 3. Node.js
+### 3. Node.js
 
 ```bash
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - && sudo apt install -y nodejs
@@ -278,7 +243,7 @@ curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - && sudo apt in
 
 Verifica con `node --version` — deve mostrare v18 o superiore.
 
-#### 4. pnpm
+### 4. pnpm
 
 ```bash
 sudo npm install -g pnpm
@@ -286,7 +251,7 @@ sudo npm install -g pnpm
 
 Verifica con `pnpm --version`.
 
-#### 5. Docker Desktop
+### 5. Docker Desktop
 
 1. Scarica Docker Desktop per Windows da [docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop/)
 2. Durante l'installazione, assicurati di selezionare **"Use WSL 2 instead of Hyper-V"**
@@ -297,7 +262,7 @@ Verifica con `pnpm --version`.
 
 Verifica nel terminale Ubuntu: `docker --version`
 
-#### 6. Editor di codice
+### 6. Editor di codice
 
 Hai due opzioni — espandi quella che vuoi usare. **Non installare entrambi.**
 
@@ -334,11 +299,11 @@ Cursor è un editor basato su VS Code che include il proprio agente AI (Composer
 
 Per aprire il terminale integrato: menu **Terminal → New Terminal**. Assicurati che sia Ubuntu/WSL, non PowerShell.
 
-**Importante**: Composer è già integrato — **salta direttamente al passo 8** (Come iniziare, all'inizio della prossima sezione). Non devi fare il passo 7 (l'agente AI da terminale).
+**Importante**: Composer è già integrato — **salta direttamente a [Come iniziare un nuovo progetto](#come-iniziare-un-nuovo-progetto)**. Non devi fare il passo 7 (l'agente AI da terminale).
 
 </details>
 
-#### 7. L'agente AI da terminale
+### 7. L'agente AI da terminale
 
 > **Hai scelto Cursor al passo 6?** **Salta questo passaggio.** Cursor ha già Composer integrato — non serve installare nient'altro.
 
@@ -390,11 +355,9 @@ Verifica con `codex --version`.
 
 > **Tutto installato?** Questi passaggi non dovrai più ripeterli. Da qui in poi, ogni volta che vuoi lavorare al progetto ti basta aprire il terminale e Docker Desktop.
 
-</details>
-
 ---
 
-## Come iniziare
+# Come iniziare un nuovo progetto
 
 Questi passaggi creano il tuo progetto e aprono una guida interattiva che ti accompagna nel resto della configurazione. Eseguili nel terminale di VS Code, uno alla volta.
 
@@ -482,7 +445,7 @@ L'agente ti farà una serie di domande su cosa vuoi costruire (chi userà l'app,
 
 ---
 
-## Il flusso di sviluppo
+# Workflow di sviluppo
 
 ### Costruire una nuova app
 
@@ -517,7 +480,7 @@ Per dettagli tecnici su differenze e limiti per ciascun agente, vedi [`docs/agen
 
 ---
 
-## Deploy
+# Deploy
 
 1. Push su GitHub
 2. Importa su [Vercel](https://vercel.com)
